@@ -56,7 +56,7 @@ body {
   color: #F05B62;
   font-family: "Gotham-Bold", Impact, sans-serif;
   line-height: 0.9em;
-  letter-spacing: -0.08em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   text-shadow: none;
 }
