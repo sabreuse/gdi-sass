@@ -297,6 +297,28 @@ header nav a { color: white; }</code></pre>
           </div>
         </section>
 
+        <!-- Nesting Media Queries -->
+        <section class="present">
+          <h3>Nesting Media Queries</h3>
+          <div>
+            <p>Sass input:</p>
+            <pre><code contenteditable class ="sass css">.sidebar {
+    background: red;
+    color: black;
+    @media all and (min-width: 600px) { color: white; }
+}
+</code></pre>
+            <p>CSS output:</p>
+            <pre><code contenteditable class ="css sass">.sidebar { 
+    background: red; 
+    color: black; 
+}
+@media all and (min-width: 600px) { 
+    .sidebar { color: white; } 
+}</code></pre>
+          </div>
+        </section>
+
         <!-- Comparison-->
         <section>
           <h3>Referencing Parent Selectors: &</h3>
