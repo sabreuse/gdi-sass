@@ -51,12 +51,64 @@
           <h3>Download Class 2 Files:</h3>
           <p class="blue" style="font-size: 3em; text-decoration: underline;">cfarm.co/sass2</p>
         </section>
-        
+
+                 <section class="present">
+          <h3>Mixins</h3>
+           <p class="left-align">Mixins are really just a collection of one or more styles that are reusable, like variables are reusable values</p>
+          <table class="code-compare">
+            <tr><td>
+            <p>Sass input:</p>
+            <pre><code contenteditable class ="sass css"><span class="value">@mixin dropshadow(<span class="variable">$text</span>)</span> {
+  color: <span class="variable">$text</span>;
+  text-shadow: 2px 4px lighten(<span class="variable">$text</span>, 50%);
+}
+p {
+  <span class="value">@include dropshadow(black);</span>
+}
+</code></pre>
+</td>
+<td>
+            <p>CSS output:</p>
+            <pre><code contenteditable class ="sass css">p {
+  color: black;
+  text-shadow: 2px 4px #808080;
+}</code></pre>
+          <p class="output-example" style="color: black; text-shadow: 2px 4px #808080; background: transparent;">Example of output style</p>
+</td>
+          </tr></table>
+        </section>
+
+         <section class="present">
+          <h3>Mixins</h3>
+          <p class="left-align">These are especially useful for CSS3 rules that need browser prefixes, like gradients.</p>
+          <p><a target="_blank" href="http://cfarm.co/gradient">cfarm.co/gradient</a></p>
+         
+        </section>
+
+        <!-- Exercise-->
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+          <li>Add some mixins to your _utilities.scss file - a good candidate is any style that needs a browser prefix</li>
+          <li>Try replacing the footer gradient with a mixin</li>
+          <li>Use these mixins in your styles.scss file</li>
+          <li>Add different types of comments that describe what your mixins do, and check the final CSS in the browser inspector to see if they appear</li> 
+        </ul>
+          <pre><code class ="sass css">@mixin name {
+  property: value;
+}
+@mixin example($argument) {
+  property: value;
+  property: $argument;
+}
+</code></pre>
+        </section>
+
         <!-- Review/Exercise 1 -->
         <section>
           <h3>Review: Mixins</h3>
           <div class = "left-align">
-          <p class = "blue">If you haven't already, create these mixins in _utilities:</p>
+          <p class = "blue">Create these mixins in _utilities:</p>
           <ul>
             <li>dropshadow/text-shadow style</li>
             <li>clearfix</li>
