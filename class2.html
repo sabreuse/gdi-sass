@@ -51,12 +51,71 @@
           <h3>Download Class 2 Files:</h3>
           <p class="blue" style="font-size: 3em; text-decoration: underline;">cfarm.co/sass2</p>
         </section>
-        
+
+        <section class="present">
+          <h3>Mixins</h3>
+           <p class="left-align">Mixins are really just a collection of one or more styles that are reusable, like variables are reusable values</p>
+          <table class="code-compare">
+            <tr><td>
+            <p>Sass input:</p>
+            <pre><code contenteditable class ="sass css"><span class="value">@mixin dropshadow(<span class="variable">$text</span>)</span> {
+  color: <span class="variable">$text</span>;
+  text-shadow: 2px 4px lighten(<span class="variable">$text</span>, 50%);
+}
+p {
+  <span class="value">@include dropshadow(black);</span>
+}
+</code></pre>
+</td>
+<td>
+            <p>CSS output:</p>
+            <pre><code contenteditable class ="sass css">p {
+  color: black;
+  text-shadow: 2px 4px #808080;
+}</code></pre>
+          <p class="output-example" style="color: black; text-shadow: 2px 4px #808080; background: transparent;">Example of output style</p>
+</td>
+          </tr></table>
+        </section>
+
+        <section class="present">
+          <h3>Anatomy of a Mixin</h3>
+           <p class="left-align">Mixins must be declared with the keyword <span class="blue">@mixin</span> before you use them. They can use values you pass in to them as arguments.</p>
+            <pre><code contenteditable class ="sass css"><span class="value">@mixin dropshadow(<span class="variable">$text</span>)</span> {
+  color: <span class="variable">$text</span>;
+  text-shadow: 2px 4px lighten(<span class="variable">$text</span>, 50%);
+}</code></pre>
+<p>Use them with <span class="blue">@include</span> and any arguments you want to use.</p>
+<pre><code contenteditable class ="sass css">p {
+  <span class="value">@include dropshadow(black);</span>
+}
+</code></pre>
+
+        </section>
+
+        <!-- Exercise-->
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+          <li>Add some mixins to your _utilities.scss file - a good candidate is any style that needs a browser prefix</li>
+          <li>Try replacing the footer gradient with a mixin</li>
+          <li>Use these mixins in your styles.scss file</li>
+        </ul>
+          <pre><code class ="sass css">@mixin name {
+  property: value;
+}
+@mixin example($argument) {
+  property: value;
+  property: $argument;
+}
+</code></pre>
+        </section>
+
         <!-- Review/Exercise 1 -->
         <section>
-          <h3>Review: Mixins</h3>
+          <h3>Exercise: Mixins</h3>
           <div class = "left-align">
-          <p class = "blue">If you haven't already, create these mixins in _utilities:</p>
+          <p class = "blue">Create these mixins in _utilities:</p>
           <ul>
             <li>dropshadow/text-shadow style</li>
             <li>clearfix</li>
@@ -77,10 +136,8 @@ p {
         <section>
           <h3>Multiple Arguments</h3>
           <div class="left-align">
-            Mixins can take multiple arguments, as we saw with the gradient mixin:
+            Mixins can take multiple arguments, for example this gradient mixin:
             <pre><code contenteditable class="sass css">@mixin gradient($color1, $color2) {
-  background-image: -webkit-linear-gradient($color1, $color2, $color1);
-  background-image: -moz-linear-gradient($color1, $color2, $color1);
   background-image: linear-gradient($color1, $color2, $color1);
 }</code></pre>  
 </div>
@@ -92,11 +149,28 @@ p {
           <div class="left-align">
             You can also specify *default* values for arguments, for next-level laziness (a good thing):
             <pre><code contenteditable class="sass css">@mixin gradient($color1: #fff, $color2: #666) {
-  background-image: -webkit-linear-gradient($color1, $color2, $color1);
-  background-image: -moz-linear-gradient($color1, $color2, $color1);
   background-image: linear-gradient($color1, $color2, $color1);
 }</code></pre>  
 </div>
+        </section>
+
+        <!-- Advanced Mixins: Content blocks -->
+        <section>
+          <h3>Content Blocks</h3>
+          <div class="left-align">
+            You can pass a block of content to a mixin as an argument. This allows you to turn your media queries into a mixin, which is the best thing ever:
+            <pre><code contenteditable class="sass css">@mixin media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}</code></pre>  
+            <p>Use it like this:</p>
+            <pre><code contenteditable class="sass css">@include media(320px) {
+  background: red;
+}</code></pre>  
+
+</div>
+
         </section>
 
         <!-- Advanced mixins -->
@@ -147,6 +221,7 @@ p {
   text-transform: uppercase;
 }</code></pre>  
 </div>
+<p><small>@extends are handy for simple things with no arguments, but they don't work with media queries. Most Sass pros recommend using mixins instead.</small></p>
         </section>          
 
         <!-- Exercise 2: Advanced Mixins -->
@@ -157,8 +232,9 @@ p {
             <ul>
               <li>Multiple arguments</li>
               <li>Default arguments</li>
+              <li>Content block</li>
               <li>Interpolation</li>
-              <li>@extend to include common styles</li>
+              <li>BONUS: @extend to include common styles</li>
             </ul>
           </li>
           <li>Use these mix-ins in your styles.scss file</li>
@@ -318,7 +394,7 @@ height: 18px; }</code></pre>
 
         <!-- Advanced mixins: If/Else logic -->
         <section>
-          <h3>Sprite Mixins</h3>
+          <h3>Logic in Sass</h3>
           <div class="left-align">
             <p>Sass has logic statements that you can use to create conditionals. They are <span class="blue">@if</span>, <span class="blue">@else if</span>, and <span class="blue">@else</span></p>
             <pre style="width: 850px"><code contenteditable class ="sass css">@mixin opacity($value: 0.5) {

@@ -6,7 +6,7 @@
 
     <title>Class 1 (Sass, Girl Develop It)</title>
 
-    <meta name="description" content="This is the official Girl Develop It Intro to Sass course. Materials by Catherine Farman.
+    <meta name="description" content="This is the official Girl Develop It Intro to Sass course. Materials by Amy Hendrix and Catherine Farman.
 
     The course is meant to be taught in 2 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
     <meta name="author" content="Girl Develop It">
@@ -51,7 +51,7 @@
           <h3>Welcome!</h3>
           <div>
           <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-          <p class ="green">Some "rules"</p>
+          <p class ="green">Some ground rules:</p>
           <ul>
             <li>We are here for you!</li>
             <li>Every question is important</li>
@@ -68,7 +68,7 @@
           <ul>
             <li>Who are you?</li>
             <li>What do you hope to get out of the class?</li>
-            <li>What's something no one in this room knows about you?</li>
+            <li>What's your favorite sign of spring?</li>
           </ul>
           </div>
         </section>
@@ -146,28 +146,6 @@ header a { color: $accentColor; }</code></pre>
           </div>
         </section>
 
-        <!-- Tools -->
-        <section>
-          <h3>Tools</h3>
-          <ul>
-            <li>
-              <div><span class = "blue">Browser:</span> Chrome or Firefox</div>
-             </li>
-             <li>
-              <span class = "blue">Development Toolkit:</span> Chrome Inspector or Firebug for Firefox</li>
-             <li>
-              <div class = "blue">Text Editor:</div>
-              <div>Sublime Text<br>
-                <a target="_blank" href="http://www.sublimetext.com/3">sublimetext.com/3</a></div>
-            </li>
-            <li>
-              <div class = "blue">Sass GUI:</div>
-              <div>Prepros<br>
-                <a target="_blank" href="http://www.prepros.io">prepros.io</a></div>
-             </li>
-          </ul>
-        </section>        
-
        <!-- Terms-->
         <section>
          <h3>Terms</h3>
@@ -183,6 +161,28 @@ header a { color: $accentColor; }</code></pre>
             <div><span class="green">CSS3:</span> The output of Sass. Sass compiles into CSS!</div>
            </li>
          </ul>
+        </section>
+
+        <!-- Tools -->
+        <section>
+          <h3>Tools</h3>
+          <ul>
+            <li>
+              <div><span class = "blue">Browser:</span> Chrome or Firefox</div>
+             </li>
+             <li>
+              <span class = "blue">Development Toolkit:</span> Chrome DevTools or Firefox Developer Tools</li>
+             <li>
+              <div class = "blue">Text Editor:</div>
+              <div>Sublime Text<br>
+                <a target="_blank" href="http://www.sublimetext.com/3">sublimetext.com/3</a></div>
+            </li>
+            <li>
+              <div class = "blue">Sass GUI:</div>
+              <div>Prepros<br>
+                <a target="_blank" href="http://www.prepros.io">prepros.io</a></div>
+             </li>
+          </ul>
         </section>
 
         <!-- Process: Sass to CSS -->
@@ -211,7 +211,7 @@ header a { color: $accentColor; }</code></pre>
           <h3>Setting up your project</h3>
           <div class="left-align">
             <ul>
-              <li>rename CSS files to have a <span class="blue"><strong>.scss</strong></span> file extension</li>
+              <li>rename CSS files to have a <span class="blue"><strong>.scss</strong></span> file extension.</li>
               <li>structure them inside the stylesheets folder like so:
                 <ul class="red">
                   <li>/stylesheets/
@@ -261,10 +261,20 @@ header a { color: $accentColor; }</code></pre>
           <div>
             <p>Sass is just the language we're learning. There are lots of other ways to install and run it.</p>
             <ul>
+              <li>Use a Sass compiler extension for your editor</li>
               <li>Install and run Sass directly on the command line</li>
-              <li>Use Sass in the Ruby on Rails asset pipeline</li>
-              <li>Include Sass in your Grunt, Gulp, or Broccoli recipes</li>
+              <li>Use Sass as part of the Ruby on Rails asset pipeline</li>
+              <li>Include Sass in a Grunt, Gulp, or Broccoli recipe</li>
             </ul>
+          </div>
+        </section>
+
+        <!-- BREAK before Part 2 -->
+        <section>
+          <h3>Break Time!</h3>
+          <div>
+            <p>Stand up and stretch - we'll resume in 5 minutes</p>
+            <img src="images/stretchbreak.jpg">
           </div>
         </section>
 
@@ -284,6 +294,28 @@ header a { color: $accentColor; }</code></pre>
             <pre><code contenteditable class ="css sass">header { color: black; }
 header nav { background: red; }
 header nav a { color: white; }</code></pre>
+          </div>
+        </section>
+
+        <!-- Nesting Media Queries -->
+        <section class="present">
+          <h3>Nesting Media Queries</h3>
+          <div>
+            <p>Sass input:</p>
+            <pre><code contenteditable class ="sass css">.sidebar {
+    background: red;
+    color: black;
+    @media all and (min-width: 600px) { color: white; }
+}
+</code></pre>
+            <p>CSS output:</p>
+            <pre><code contenteditable class ="css sass">.sidebar { 
+    background: red; 
+    color: black; 
+}
+@media all and (min-width: 600px) { 
+    .sidebar { color: white; } 
+}</code></pre>
           </div>
         </section>
 
@@ -307,7 +339,6 @@ nav a:hover { text-decoration: underline; }</code></pre>
           </div>
         </section>
 
-
         <!-- Exercise - #2? 3? -->
         <section>
           <h3>Let's Develop It!</h3>
@@ -320,15 +351,6 @@ nav a:hover { text-decoration: underline; }</code></pre>
             <li>After saving, refresh to see your changes in the browser</li>
 
           </ul>
-        </section>
-
-        <!-- BREAK before Part 2 -->
-        <section>
-          <h3>Break Time!</h3>
-          <div>
-            <p>Stand up and stretch - we'll resume in 5 minutes</p>
-            <img src="images/stretchbreak.jpg">
-          </div>
         </section>
 
 <!-- Scripting! -->
@@ -350,14 +372,16 @@ nav a:hover { text-decoration: underline; }</code></pre>
 
          <section>
           <h3>Defining Variables</h3>
-          <p>Variables with Sass let us reuse values more than once, while only defining them in one place</p>
+          <p>Variables let us define values once, and use them multiple times *</p>
           <pre><code contenteditable class = "sass css">//define using dollar sign
 $brandColor: #f90000;
 $mainTextcolor: #fff;
 $accentColor: #ccc;</code></pre>
         <p>To create a variable you need a dollar sign before the name of your variable, and a colon: to give it a <em>value</em></p>
-        <p>Note that in Sass files, you can comment out a line with <span class="green">// two slashes</span></p>
+        <small>* This is a really important programming principle called DRY, for "Don't Repeat Yourself". We'll see it again later.</small>
 
+<!--         <p>Note that in Sass files, you can comment out a line with <span class="green">// two slashes</span></p>
+ -->
         </section>
 
  <section>
@@ -412,6 +436,13 @@ $defaultPadding: $defaultMargin;
           </ul>
         </section>
 
+        <!-- Project structure: Partials -->
+        <section>
+          <h3>Sass Partials</h3>
+          <p class="left-align">Take a closer look look <span class="blue">_utilities.scss</span>.</p>
+          <p class="left-align">Unlike <span class="blue">styles.scss</span> and <span class="blue">reset.scss</span>, it isn't compiled into a file called <span class="blue">utilities.css</span>. Sass ignores files that start with an underscore character. Instead, you <span class="blue">@import</span> them into your main file where you want the code to appear. These files are called "partials".</p>
+          <p class="left-align">Using lots of partials keeps your files small and organized, while still compiling everything into one stylesheet so your site will load fast.</p>
+        </section>
 
         <!-- Syntax highlighting -->
         <section>
@@ -419,7 +450,7 @@ $defaultPadding: $defaultMargin;
           <div class="left-align">
           <p>You can download tools to highlight your Sass properly in Sublime Text:</p>
           <ul>
-            <li><a target="_blank" href="http://wbond.net/sublime_packages/package_control/installation">Install Package Manager for Sublime Text 2</a></li>
+            <li><a target="_blank" href="http://wbond.net/sublime_packages/package_control/installation">Install Package Manager for Sublime Text</a></li>
             <li>Go to Tools > Command Palette. Type "Package Control".</li>
             <li>Click "Install Package"</li>
             <li>Type "Sass" and click the first result</li>
@@ -476,7 +507,7 @@ footer {
 
         <section class="present">
           <h3>Color Functions</h3>
-          <p class="left-align">Color functions are built-in to Sass. They let you alter existing color values. This is the <span class="blue">lighten</span> function:</p>
+          <p>Color functions are built-in to Sass. They let you alter existing color values. This is the <span class="blue">lighten</span> function:</p>
           <table class="code-compare">
             <tr><td>
             <p>Sass input:</p>
@@ -543,7 +574,7 @@ body {
   background: #000;
   color: #808080;
 }</code></pre>
-          <p class="output-example grayscale">Example of output style</p>
+          <p class="output-example" style="color: #808080">Example of output style</p>
 
           </tr></td></table>
         </section>
@@ -554,7 +585,7 @@ body {
           <h3>Let's Develop It</h3>
           <ul>
           <li>Edit your variables in _utilities.scss file to use color functions</li>
-          <li>Refer to the <a target="_blank" href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">sass-lang.com docs</a></li>
+          <li>Refer to the <a target="_blank" href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">sass-lang.com docs</a> or <a href="http://jackiebalzer.com/color">this Sass color function reference.</a></li>
           <li>Compile to CSS to see your changes</li>
           <li class="blue">Bonus - change the color scheme of your website without editing styles.scss!</li>
         </ul>
@@ -585,59 +616,6 @@ a { color: blue; }
 
           </tr></td></table>
         </section>
-
-         <section class="present">
-          <h3>Mixins</h3>
-           <p class="left-align">Mixins are really just a collection of one or more styles that are reusable, like variables are reusable values</p>
-          <table class="code-compare">
-            <tr><td>
-            <p>Sass input:</p>
-            <pre><code contenteditable class ="sass css"><span class="value">@mixin dropshadow(<span class="variable">$text</span>)</span> {
-  color: <span class="variable">$text</span>;
-  text-shadow: 2px 4px lighten(<span class="variable">$text</span>, 50%);
-}
-p {
-  <span class="value">@include dropshadow(black);</span>
-}
-</code></pre>
-</td>
-<td>
-            <p>CSS output:</p>
-            <pre><code contenteditable class ="sass css">p {
-  color: black;
-  text-shadow: 2px 4px #808080;
-}</code></pre>
-          <p class="output-example" style="color: black; text-shadow: 2px 4px #808080; background: transparent;">Example of output style</p>
-</td>
-          </tr></table>
-        </section>
-
-         <section class="present">
-          <h3>Mixins</h3>
-          <p class="left-align">These are especially useful for CSS3 rules that need browser prefixes, like gradients.</p>
-          <p><a target="_blank" href="http://cfarm.co/gradient">cfarm.co/gradient</a></p>
-         
-        </section>
-
-        <!-- Exercise-->
-        <section>
-          <h3>Let's Develop It</h3>
-          <ul>
-          <li>Add some mixins to your _utilities.scss file - a good candidate is any style that needs a browser prefix</li>
-          <li>Try replacing the footer gradient with a mixin</li>
-          <li>Use these mixins in your styles.scss file</li>
-          <li>Add different types of comments that describe what your mixins do, and check the final CSS in the browser inspector to see if they appear</li> 
-        </ul>
-          <pre><code class ="sass css">@mixin name {
-  property: value;
-}
-@mixin example($argument) {
-  property: value;
-  property: $argument;
-}
-</code></pre>
-        </section>
-
 
         <!-- -->
         <section>
