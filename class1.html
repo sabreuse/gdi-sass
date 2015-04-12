@@ -317,7 +317,6 @@ nav a:hover { text-decoration: underline; }</code></pre>
           </div>
         </section>
 
-
         <!-- Exercise - #2? 3? -->
         <section>
           <h3>Let's Develop It!</h3>
@@ -351,14 +350,16 @@ nav a:hover { text-decoration: underline; }</code></pre>
 
          <section>
           <h3>Defining Variables</h3>
-          <p>Variables with Sass let us reuse values more than once, while only defining them in one place</p>
+          <p>Variables let us define values once, and use them multiple times *</p>
           <pre><code contenteditable class = "sass css">//define using dollar sign
 $brandColor: #f90000;
 $mainTextcolor: #fff;
 $accentColor: #ccc;</code></pre>
         <p>To create a variable you need a dollar sign before the name of your variable, and a colon: to give it a <em>value</em></p>
-        <p>Note that in Sass files, you can comment out a line with <span class="green">// two slashes</span></p>
+        <small>* This is a really important programming principle called DRY, for "Don't Repeat Yourself". We'll see it again later.</small>
 
+<!--         <p>Note that in Sass files, you can comment out a line with <span class="green">// two slashes</span></p>
+ -->
         </section>
 
  <section>
@@ -420,7 +421,7 @@ $defaultPadding: $defaultMargin;
           <div class="left-align">
           <p>You can download tools to highlight your Sass properly in Sublime Text:</p>
           <ul>
-            <li><a target="_blank" href="http://wbond.net/sublime_packages/package_control/installation">Install Package Manager for Sublime Text 2</a></li>
+            <li><a target="_blank" href="http://wbond.net/sublime_packages/package_control/installation">Install Package Manager for Sublime Text</a></li>
             <li>Go to Tools > Command Palette. Type "Package Control".</li>
             <li>Click "Install Package"</li>
             <li>Type "Sass" and click the first result</li>
