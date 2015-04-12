@@ -78,6 +78,21 @@ p {
           </tr></table>
         </section>
 
+        <section class="present">
+          <h3>Anatomy of a Mixin</h3>
+           <p class="left-align">Mixins must be declared with the keyword <span class="blue">@mixin</span> before you use them. They can use values you pass in to them.</p>
+            <pre><code contenteditable class ="sass css"><span class="value">@mixin dropshadow(<span class="variable">$text</span>)</span> {
+  color: <span class="variable">$text</span>;
+  text-shadow: 2px 4px lighten(<span class="variable">$text</span>, 50%);
+}</code></pre>
+<p>Use them with <span class="blue">@include</span> and any arguments you want to use.</p>
+<pre><code contenteditable class ="sass css">p {
+  <span class="value">@include dropshadow(black);</span>
+}
+</code></pre>
+
+        </section>
+
         <!-- Exercise-->
         <section>
           <h3>Let's Develop It</h3>
